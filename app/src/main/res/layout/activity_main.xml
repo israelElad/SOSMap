@@ -44,6 +44,7 @@
             android:layout_margin="5dp"
             android:background="#76AC40"
             android:fontFamily="@font/chela_one"
+            android:onClick="HelpClick"
             android:padding="5dp"
             android:text="Help others"
             android:textColor="@android:color/background_light"
