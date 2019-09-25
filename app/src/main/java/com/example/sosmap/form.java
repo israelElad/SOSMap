@@ -26,6 +26,7 @@ public class form extends AppCompatActivity {
     }
     public void SendClick(View view)
     {
+
         Intent intent = new Intent(form.this, MainActivity.class);
         startActivity(intent);
     }
