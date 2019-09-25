@@ -11,8 +11,8 @@
         android:layout_height="match_parent"
         android:gravity="center_horizontal|center_vertical"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="123dp">
 
         <TextView
             android:id="@+id/title"
@@ -26,15 +26,6 @@
             android:textSize="80sp" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/help_button" />
-
-        <ImageButton
             android:id="@+id/mapButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,6 +34,18 @@
             android:background="@android:color/transparent"
             android:onClick="MapClick"
             app:srcCompat="@drawable/world_map" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#76AC40"
+            android:fontFamily="@font/bubblegum_sans"
+            android:padding="5dp"
+            android:text="Help others"
+            android:textColor="@android:color/background_light"
+            android:textSize="36sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
