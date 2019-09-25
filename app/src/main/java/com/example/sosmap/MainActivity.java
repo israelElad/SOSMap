@@ -24,4 +24,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, MapsActivity.class);
         startActivity(intent);
     }
+    public void HelpClick(View view)
+    {
+        Intent intent = new Intent(MainActivity.this, form.class);
+        startActivity(intent);
+    }
 }
