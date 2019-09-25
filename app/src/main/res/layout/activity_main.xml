@@ -32,7 +32,6 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
-            android:onClick="MapClick"
             app:srcCompat="@drawable/help_button" />
 
         <ImageButton
@@ -42,6 +41,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_margin="10dp"
             android:background="@android:color/transparent"
+            android:onClick="MapClick"
             app:srcCompat="@drawable/world_map" />
 
     </LinearLayout>
