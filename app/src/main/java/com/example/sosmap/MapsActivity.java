@@ -18,6 +18,8 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Map;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
     Location myLocation;
     private GoogleMap mMap;
@@ -36,6 +38,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 //your code here
                 Toast.makeText(getApplicationContext(),location.toString(), Toast.LENGTH_SHORT).show();
                 myLocation=location;
+                if(mMap!=null){
+                    onMapReady(mMap);
+                }
+
             }
 
              @Override
@@ -49,7 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
              }
 
              @Override
-             public void onProviderDisabled(String provider) { 
+             public void onProviderDisabled(String provider) {
 
              }
          };
@@ -86,9 +92,22 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        DataBase db=DataBase.getInstance();
+        Map<Location,String> map=db.getLocations();
+        for(Location loc : map.keySet()){
+            LatLng firstAidKit = new LatLng(loc.getLatitude(), loc.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(firstAidKit).title(map.get(loc)));
+        }
+
+        if(myLocation!=null) {
+            LatLng firstAidKit = new LatLng(myLocation.getLatitude(), myLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(firstAidKit).title("My location"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(firstAidKit));
+
+
+        }
+
     }
 
 
